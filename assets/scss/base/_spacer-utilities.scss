@@ -1,0 +1,64 @@
+// set key value pairs for margin and padding
+@each $key, $val in map-get($grid, 'breakpoints') {
+  @if ($key == 'default') {
+    @each $prop, $letter in (margin: m, padding: p) {
+      // loop through top, right, bottom, and left
+      @each $direction, $d in $xy-border {
+        // loop through the spacers we've set
+        @each $unit, $rem in $spacers {
+          .#{$letter}#{$d}-#{$unit} {
+            #{$prop}-#{$direction}: #{$rem} !important;
+          }
+        }
+      }
+
+      @each $unit, $rem in $spacers {
+        // add in x-axis and y-axis spacing
+        .#{$letter}x-#{$unit} {
+          #{$prop}-left: $rem !important;
+          #{$prop}-right: $rem !important;
+        }
+        .#{$letter}y-#{$unit} {
+          #{$prop}-top: $rem !important;
+          #{$prop}-bottom: $rem !important;
+        }
+
+        // add both x-axis and y-axis spacing
+        .#{$letter}a-#{$unit} {
+          #{$prop}: $rem !important;
+        }
+      }
+    }
+  } @else {
+    @media (min-width: $val * 1px) {
+      @each $prop, $letter in (margin: m, padding: p) {
+        // loop through top, right, bottom, and left
+        @each $direction, $d in $xy-border {
+          // loop through the spacers we've set
+          @each $unit, $rem in $spacers {
+            .#{$letter}#{$d}-#{$key}-#{$unit} {
+              #{$prop}-#{$direction}: #{$rem} !important;
+            }
+          }
+        }
+
+        @each $unit, $rem in $spacers {
+          // add in x-axis and y-axis spacing
+          .#{$letter}x-#{$key}-#{$unit} {
+            #{$prop}-left: $rem !important;
+            #{$prop}-right: $rem !important;
+          }
+          .#{$letter}y-#{$key}-#{$unit} {
+            #{$prop}-top: $rem !important;
+            #{$prop}-bottom: $rem !important;
+          }
+
+          // add both x-axis and y-axis spacing
+          .#{$letter}a-#{$key}-#{$unit} {
+            #{$prop}: $rem !important;
+          }
+        }
+      }
+    }
+  }
+}

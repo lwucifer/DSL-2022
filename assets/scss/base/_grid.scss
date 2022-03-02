@@ -1,0 +1,173 @@
+$containerResponsive: map-deep-get($grid, 'container', 'responsive');
+$containerGap: map-deep-get($grid, 'container', 'gap');
+$colMax: map-deep-get($grid, 'columns', 'max');
+$colGap: map-deep-get($grid, 'columns', 'gap');
+
+%grid-column {
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  padding-left: ($colGap / 2) * 1rem;
+  padding-right: ($colGap / 2) * 1rem;
+}
+
+// Base classes
+.container,
+.container-fluid {
+  width: 100%;
+  padding-left: $containerGap * 1rem;
+  padding-right: $containerGap * 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  &.less-space {
+    padding-left: ($colGap / 3.5) * 1rem;
+    padding-right: ($colGap / 3.5) * 1rem;
+  }
+}
+
+.row {
+  margin-left: -($colGap / 2) * 1rem;
+  margin-right: -($colGap / 2) * 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class^='col-'],
+  > .col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Make container
+@each $key, $val in $containerResponsive {
+  @media (min-width: map-deep-get($grid, 'breakpoints', $key) * 1px) {
+    .container {
+      max-width: $val * 1px;
+    }
+  }
+}
+
+// Make column
+@each $key, $val in map-get($grid, 'breakpoints') {
+  @if ($key == 'default') {
+    .col {
+      @extend %grid-column;
+      flex-grow: 1;
+      flex-basis: 0;
+      max-width: 100%;
+    }
+
+    .col-auto {
+      @extend %grid-column;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+    }
+
+    @for $i from 1 through $colMax {
+      .col-#{$i} {
+        @extend %grid-column;
+        max-width: (100 * $i) / $colMax * 1%;
+        flex: 0 0 (100 * $i) / $colMax * 1%;
+      }
+
+      .offset-#{$i} {
+        margin-left: (100 * $i) / $colMax * 1%;
+      }
+    }
+
+    .g-default {
+      margin-left: -($colGap / 2) * 1rem;
+      margin-right: -($colGap / 2) * 1rem;
+
+      > [class^='col-'],
+      > .col {
+        padding-left: ($colGap / 2) * 1rem;;
+        padding-right: ($colGap / 2) * 1rem;;
+      }
+    }
+
+    @each $unit, $rem in $spacers {
+      .g-#{$unit} {
+        margin-left: $rem/-2;
+        margin-right: $rem/-2;
+
+        > [class^='col-'],
+        > .col {
+          padding-left: $rem/2;
+          padding-right: $rem/2;
+        }
+      }
+    }
+
+  } @else {
+    .col-#{$key} {
+      @extend %grid-column;
+    }
+
+    .col-#{$key}-auto {
+      @extend %grid-column;
+    }
+
+    @for $i from 1 through $colMax {
+      .col-#{$key}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+
+    @media (min-width: $val * 1px) {
+      .col-#{$key} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+      }
+
+      .col-#{$key}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+
+      .g-#{$key}-default {
+        margin-left: -($colGap / 2) * 1rem;
+        margin-right: -($colGap / 2) * 1rem;
+  
+        > [class^='col-'],
+        > .col {
+          padding-left: ($colGap / 2) * 1rem;;
+          padding-right: ($colGap / 2) * 1rem;;
+        }
+      }
+
+      @each $unit, $rem in $spacers {
+        .g-#{$key}-#{$unit} {
+          margin-left: $rem/-2;
+          margin-right: $rem/-2;
+  
+          > [class^='col-'],
+          > .col {
+            padding-left: $rem/2;
+            padding-right: $rem/2;
+          }
+        }
+      }
+
+      @for $i from 1 through $colMax {
+        .col-#{$key}-#{$i} {
+          max-width: (100 * $i) / $colMax * 1%;
+          flex: 0 0 (100 * $i) / $colMax * 1%;
+        }
+
+        .offset-#{$key}-#{$i} {
+          margin-left: (100 * $i) / $colMax * 1%;
+        }
+      }
+    }
+  }
+}

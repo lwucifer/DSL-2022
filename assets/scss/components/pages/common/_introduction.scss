@@ -1,0 +1,22 @@
+.introduction {
+  background: $white;
+  padding: 1.6rem;
+
+  &__title {
+    font-size: $font-size-lg;
+    color: $body-color-dark;
+    font-weight: $font-weight-bold;
+  }
+
+  &__intro {
+    margin-top: 1.6rem;
+    // color: $primary;
+    margin-bottom: 0.8rem;
+  }
+
+  &__content {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

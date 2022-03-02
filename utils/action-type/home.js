@@ -1,0 +1,10 @@
+export const GET_SLIDER_BANNER = "getSliderBanner";
+export const GET_HOME_COMBO = "getHomeCombo";
+export const GET_HOME_HOTEL = "getHomeHotel";
+export const GET_HOME_RESTAURANT = "getHomeRestaurant";
+export const GET_HOME_TOUR = "getHomeTour";
+export const GET_HOME_VIDEO = "getHomeVideo";
+export const GET_HOME_PARTNER = "getHomePartner";
+export const POST_FAVORITE = "postFavorite";
+export const GET_HOME_PRODUCT_CATEGORY = "getHomeProductCategory";
+export const GET_HOME_TOURISM_PRODUCT_CATEGORY = "getHomeTourismProductCategory";

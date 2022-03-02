@@ -1,0 +1,28 @@
+.#{$prefix}divider {
+  background-color: $divider-background;
+}
+
+/** MODIFIERS **/
+
+// Type
+.#{$prefix}divider--horizontal {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: $divider-horizontal-margin;
+}
+
+.#{$prefix}divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: .9em;
+  margin: $divider-vertical-margin;
+  vertical-align: middle;
+}
+
+// Variant
+@each $color, $value in $theme-colors {
+  .#{$prefix}divider--#{$color} {
+    background-color: $value;
+  }
+}

@@ -1,0 +1,15 @@
+.scroll-top {
+    position: fixed;
+    right: 100px;
+    bottom: 20px;
+    z-index: 2147483648;
+
+    svg {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    // @media(min-width: 768px) {
+    //     right: 9.5rem;
+    // }
+}

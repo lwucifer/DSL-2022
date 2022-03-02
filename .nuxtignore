@@ -1,0 +1,6 @@
+dist
+store/dist
+plugins/dist
+middleware/dist
+utils/dist
+**/dist

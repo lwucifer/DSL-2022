@@ -1,0 +1,131 @@
+//
+// Check/radio
+//
+
+.#{$prefix}form-check {
+  display: block;
+  min-height: $form-check-min-height;
+  padding-left: $form-check-padding-left;
+  margin-bottom: $form-check-margin-bottom;
+
+  .#{$prefix}form-check__checkmark {
+    float: left;
+    margin-left: $form-check-padding-left * -1;
+  }
+}
+
+.#{$prefix}form-check__checkmark {
+  display: inline-block;
+  width: $form-check-input-width;
+  height: $form-check-input-width;
+  margin-top: ($line-height-base - $form-check-input-width) / 2; // line-height minus check height
+  vertical-align: top;
+  background-color: $form-check-input-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: $form-check-input-border;
+  color-adjust: exact; // Keep themed appearance for print
+  @include transition($form-check-transition);
+}
+
+.#{$prefix}form-check__input {
+  appearance: none;
+
+  &[type="checkbox"] {
+    + .#{$prefix}form-check__checkmark {
+      @include border-radius($form-check-input-border-radius);
+    }
+  }
+
+  &[type="radio"] {
+    border-radius: $form-check-radio-border-radius;
+    
+    + .#{$prefix}form-check__checkmark {
+      // stylelint-disable-next-line property-blacklist
+      border-radius: $form-check-radio-border-radius;
+    }
+  }
+
+  &:active {
+    + .#{$prefix}form-check__checkmark {
+      filter: $form-check-input-active-filter;
+    }
+  }
+
+  &:focus {
+    + .#{$prefix}form-check__checkmark {
+      border-color: $form-check-input-focus-border;
+      outline: 0;
+      box-shadow: $form-check-input-focus-box-shadow;
+    }
+  }
+
+  &:checked {
+    + .#{$prefix}form-check__checkmark {
+      border-color: $form-check-input-checked-border-color;
+    }
+
+    &[type="checkbox"] {
+      + .#{$prefix}form-check__checkmark {
+        background-color: $form-check-input-checked-bg-color;
+        @if $enable-gradients {
+          background-image: escape-svg($form-check-input-checked-bg-image), var(--bs-gradient);
+        } @else {
+          background-image: escape-svg($form-check-input-checked-bg-image);
+        }
+      }
+    }
+
+    &[type="radio"] {
+      + .#{$prefix}form-check__checkmark {
+        @if $enable-gradients {
+          background-image: escape-svg($form-check-radio-checked-bg-image), var(--bs-gradient);
+        } @else {
+          background-image: escape-svg($form-check-radio-checked-bg-image);
+        }
+      }
+    }
+  }
+
+  &[type="checkbox"]:indeterminate {
+    + .#{$prefix}form-check__checkmark {
+      background-color: $form-check-input-indeterminate-bg-color;
+      border-color: $form-check-input-indeterminate-border-color;
+  
+      @if $enable-gradients {
+        background-image: escape-svg($form-check-input-indeterminate-bg-image), var(--bs-gradient);
+      } @else {
+        background-image: escape-svg($form-check-input-indeterminate-bg-image);
+      }
+    }
+  }
+
+  &:disabled {
+    + .#{$prefix}form-check__checkmark {
+      pointer-events: none;
+      filter: none;
+      opacity: .5;
+    }
+  }
+
+  // Use disabled attribute in addition of :disabled pseudo-class
+  // See: https://github.com/twbs/bootstrap/issues/28247
+  &[disabled],
+  &:disabled {
+    ~ .#{$prefix}form-check__text {
+      opacity: .5;
+    }
+  }
+}
+
+.#{$prefix}form-check__text {
+  color: $form-check-label-color;
+  cursor: $form-check-label-cursor;
+}
+
+.#{$prefix}form-check--inline {
+  display: inline-block;
+  margin-right: $form-check-inline-margin-right;
+}
+

@@ -1,0 +1,80 @@
+.#{$prefix}spinner {
+  display: inline-block;
+  position: relative;
+  animation: #{$prefix}spinner-circle-1 4.8s linear infinite;
+  @include spinner-size($spinner-size);
+}
+
+.#{$prefix}spinner__spin {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation: #{$prefix}spinner-circle-2 1.2s linear infinite;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-style: solid;
+    border-radius: 50%;
+    animation: #{$prefix}spinner-circle-3 1.2s cubic-bezier(0.77, 0, 0.175, 1)
+      infinite;
+  }
+}
+
+// Spinner variant
+@each $color, $value in $theme-colors {
+  .#{$prefix}spinner--#{$color} {
+    @include spinner-variant($value);
+  }
+}
+
+// Spinner size
+.#{$prefix}spinner--sm {
+  @include spinner-size($spinner-size-sm);
+}
+
+.#{$prefix}spinner--lg {
+  @include spinner-size($spinner-size-lg);
+}
+
+
+
+// Keyframes
+@keyframes #{$prefix}spinner-circle-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes #{$prefix}spinner-circle-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(220deg);
+  }
+}
+
+@keyframes #{$prefix}spinner-circle-3 {
+  0% {
+    transform: rotate(-140deg);
+  }
+  50% {
+    transform: rotate(-160deg);
+  }
+  100% {
+    transform: rotate(140deg);
+  }
+}

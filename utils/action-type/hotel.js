@@ -1,0 +1,12 @@
+export const GET_HOTEL_BANNER = "getHotelBanner";
+export const GET_HOTEL_LIST = "getHotelList";
+export const GET_HOTEL_DETAIL = "getHotelDetail";
+export const POST_HOTEL_BOOKING = "postHotelBooking";
+export const GET_HOTEL_COMMENT = "getHotelComment";
+export const GET_HOTEL_COMMENT_DETAIL = "getHotelCommentDetail";
+export const GET_HOTEL_RELATED = "getHotelRelated";
+export const POST_HOTEL_FAVORITE = "postHotelFavorite";
+export const POST_HOTEL_DETAIL_FAVORITE = "postHotelDetailFavorite";
+export const POST_HOTEL_RELATED_FAVORITE = "postHotelRelatedFavorite";
+export const POST_HOTEL_BOOKING_CHECK = "postHotelBookingCheck"
+export const GET_HOTEL_BOOKING_CHECK_HOTEL = "getHotelBookingCheckHotel"

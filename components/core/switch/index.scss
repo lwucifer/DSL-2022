@@ -1,0 +1,73 @@
+$switch-inner-spacer: ($switch-height - $switch-circle-size) / 2;
+
+/* The switch - the box around the slider */
+.#{$prefix}switch {
+  position: relative;
+  display: inline-block;
+  width: $switch-width;
+  height: $switch-height;
+
+  &:focus {
+    .#{$prefix}switch__slider {
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
+/* The slider */
+.#{$prefix}switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $switch-bg;
+  border-radius: $switch-height/2;
+  transition: background-color 0.15s;
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: $switch-circle-size;
+    width: $switch-circle-size;
+    left: $switch-inner-spacer;
+    bottom: $switch-inner-spacer;
+    background-color: $switch-circle-color;
+    border-radius: 50%;
+    transition: transform 0.15s;
+  }
+}
+
+/* Hide default HTML checkbox */
+.#{$prefix}switch__checkbox {
+  &:checked + .#{$prefix}switch__slider {
+    background-color: $switch-active-bg;
+
+    &:before {
+      transform: translateX(($switch-width - ($switch-inner-spacer*2))/2);
+    }
+  }
+}
+
+
+// MODIFIER
+.#{$prefix}switch--sm {
+  width: $switch-width-sm;
+  height: $switch-height-sm;
+
+  .#{$prefix}switch__slider:before {
+    width: $switch-circle-size-sm;
+    height: $switch-circle-size-sm;
+  }
+}
+
+.#{$prefix}switch--lg {
+  width: $switch-width-lg;
+  height: $switch-height-lg;
+
+  .#{$prefix}switch__slider:before {
+    width: $switch-circle-size-lg;
+    height: $switch-circle-size-lg;
+  }
+}

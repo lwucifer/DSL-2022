@@ -1,0 +1,188 @@
+.#{$prefix}textarea {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: $input-height;
+  background-color: $input-bg;
+  border: $input-border-width solid $input-border-color;
+  font-family: $input-font-family;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  font-size: $input-font-size;
+  @include border-radius($input-border-radius, 0);
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+}
+
+.#{$prefix}textarea__input {
+  display: block;
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  padding: $input-padding-y $input-padding-x;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: $input-color;
+
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    // iOS fix for unreadable disabled content
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.#{$prefix}textarea__prepend,
+.#{$prefix}textarea__append {
+  padding: $input-padding-y $input-padding-x;
+  color: $input-addon-color;
+  background: $input-addon-bg;
+}
+
+.#{$prefix}textarea__prepend {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: $input-border-width solid $input-addon-border;
+  @include border-radius($input-border-radius);
+}
+
+.#{$prefix}textarea__append {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: $input-border-width solid $input-addon-border;
+}
+
+// Modifier
+//
+
+// Hover, focus state
+.#{$prefix}textarea:hover,
+.#{$prefix}textarea--focus {
+  background-color: $input-focus-bg;
+  border-color: $input-focus-border-color;
+  @if $enable-shadows {
+    @include box-shadow($input-box-shadow, $input-focus-box-shadow);
+  } @else {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  .#{$prefix}textarea__input {
+    color: $input-focus-color;
+  }
+}
+
+// Disabled, readonly state
+.#{$prefix}textarea--disabled,
+.#{$prefix}textarea--readonly {
+  background-color: $input-disabled-bg !important;
+  border-color: $input-disabled-border-color !important;
+}
+
+.#{$prefix}textarea--disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+// Square shape
+.#{$prefix}textarea--square {
+  border-radius: 0;
+}
+
+// Rounded shape - has border-radius
+.#{$prefix}textarea--rounded {
+  border-radius: $input-border-radius;
+
+  .#{$prefix}textarea--sm & {
+    border-radius: $input-border-radius-sm;
+  }
+
+  .#{$prefix}textarea--lg & {
+    border-radius: $input-border-radius-lg;
+  }
+}
+
+// Size
+.#{$prefix}textarea--sm {
+  min-height: $input-height-sm;
+  font-size: $input-font-size-sm;
+  @include border-radius($input-border-radius-sm);
+
+  .#{$prefix}textarea__input,
+  .#{$prefix}textarea__prepend,
+  .#{$prefix}textarea__append {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+  }
+}
+
+.#{$prefix}textarea--lg {
+  min-height: $input-height-lg;
+  font-size: $input-font-size-lg;
+  @include border-radius($input-border-radius-lg);
+
+  .#{$prefix}textarea__input,
+  .#{$prefix}textarea__prepend,
+  .#{$prefix}textarea__append {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+  }
+}
+
+// Validation
+.#{$prefix}textarea--valid {
+  background-color: $input-valid-bg;
+  border-color: $input-valid-border-color;
+
+  .#{$prefix}textarea__input {
+    color: $input-valid-color;
+  }
+
+  &.#{$prefix}textarea:hover,
+  &.#{$prefix}textarea--focus {
+    border-color: $input-valid-border-color;
+    @if $enable-shadows {
+      @include box-shadow($input-box-shadow, $input-valid-focus-box-shadow);
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: $input-valid-focus-box-shadow;
+    }
+  }
+}
+
+.#{$prefix}textarea--invalid {
+  background-color: $input-invalid-bg;
+  border-color: $input-invalid-border-color;
+
+  .#{$prefix}textarea__input {
+    color: $input-invalid-color;
+  }
+
+  &.#{$prefix}textarea:hover,
+  &.#{$prefix}textarea--focus {
+    border-color: $input-invalid-border-color;
+    @if $enable-shadows {
+      @include box-shadow($input-box-shadow, $input-invalid-focus-box-shadow);
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: $input-invalid-focus-box-shadow;
+    }
+
+    .#{$prefix}textarea__input {
+      color: $input-invalid-color;
+    }
+  }
+}

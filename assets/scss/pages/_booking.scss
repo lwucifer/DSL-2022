@@ -1,0 +1,56 @@
+.page-booking-wrapper {
+  margin-top: 2.4rem;
+  margin-bottom: 12.4rem;
+}
+
+.booking-actions {
+  display: flex;
+  flex-direction: column;
+
+  &__back {
+    background-color: $body-color;
+    color: #fff;
+
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+
+  .v-btn {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include media(">=md") {
+    margin-right: -1.6rem;
+    margin-bottom: -1.6rem;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .v-btn {
+      min-width: 12rem;
+      width: auto;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.booking-policy, .booking-note {
+  max-height: 40rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 6px !important;
+  }
+
+  @include media(">=md") {
+    max-height: 20rem;
+  }
+}

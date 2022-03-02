@@ -1,0 +1,59 @@
+.restaurant-tab {
+  background-color: $white;
+  min-height: 6rem;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  span {
+    color: $body-color;
+    margin-right: 1.6rem;
+    font-size: $font-size-lg;
+    padding: 2rem 1.6rem;
+    display: inline-block;
+    height: 6rem;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0rem;
+      height: 1px;
+      background-color: $primary;
+      transition: all 300ms;
+      opacity: 0;
+      visibility: hidden;
+
+      @media (min-width: 768px) {
+        width: 4.8rem;
+      }
+    }
+  }
+
+  .active {
+    color: $primary;
+    position: relative;
+
+    &:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  span:last-child {
+    margin-right: 0;
+  }
+
+  &.top-sticky {
+    box-shadow: $box-shadow-sm;
+  }
+}

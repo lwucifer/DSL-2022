@@ -1,0 +1,126 @@
+.page-account-content {
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: 1.6rem;
+}
+
+.account-aside {
+  background-color: #fff;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.account-aside__info {
+  display: flex;
+  align-items: center;
+  padding: 1.6rem;
+  background-color: $blue-dark;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 6px,
+    rgba(#fff, 0.1) 6px 7px
+  );
+}
+
+.account-aside__info-avatar {
+  margin-right: 0.8rem;
+  min-width: 5.8rem;
+}
+
+.account-aside__info-name {
+  color: #fff;
+  line-height: (20/17);
+  margin-bottom: 0.8rem;
+  @include text-overflow;
+  display: block;
+  max-width: 20rem;
+}
+
+.account-aside__info-email {
+  @include text-overflow;
+  color: $primary;
+  line-height: (16/14);
+  display: block;
+  max-width: 20rem;
+}
+
+.account-aside__menu {
+  list-style-type: none;
+  padding: 1.6rem;
+  margin: 0;
+}
+
+.account-aside__menu-item {
+  > a {
+    display: block;
+    line-height: (20/17);
+    padding: 1rem 1.6rem;
+    font-size: $font-size-lg;
+    border-radius: $border-radius;
+    transition: color 0.3s, background-color 0.3s;
+    color: $body-color;
+    background-color: #fbfbfb;
+
+    .icon {
+      font-size: 1.6rem;
+      margin-right: 0.8rem;
+    }
+
+    &:hover, &.nuxt-link-active {
+      color: #fff;
+      background-color: $primary;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
+
+  &--logout {
+    > a {
+      color: $danger;
+
+      .icon {
+        #Rectangle_137 {
+          transition: stroke .3s;
+          stroke: currentColor;
+        }
+
+        #Rectangle_138 {
+          transition: fill .3s;
+          fill: #fbfbfb;
+        }
+      }
+
+      &:hover {
+        background-color: $danger;
+
+        .icon {
+          #Rectangle_138 {
+            fill: $danger;
+          }
+
+          #Path_260,
+          #Path_261 {
+            fill: none;
+            stroke: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &--saved,
+  &--history,
+  &--compare {
+    > a .icon [stroke] {
+      stroke: currentColor;
+    }
+  }
+
+  &--profile {
+    > a .icon g {
+      stroke: currentColor;
+    }
+  }
+}

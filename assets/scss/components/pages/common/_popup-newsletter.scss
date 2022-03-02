@@ -1,0 +1,23 @@
+.newletter-body {
+    z-index: 2009;
+}
+
+.newletter-submit {
+    margin-bottom: 6.6rem;
+    padding: 0 2rem;
+
+    @media (min-width: 768px) {
+       padding: 0;
+    }
+
+    .newletter-submit-input {
+        width: 100%;
+           
+        @media (min-width: 768px) {
+            width: 80rem;
+            margin: 0 auto;
+        }
+    }
+
+   
+}

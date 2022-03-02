@@ -1,0 +1,88 @@
+.departure-schedule {
+  padding: 1.6rem;
+  background-color: $white;
+  margin-top: 2.4rem;
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__table {
+    margin-top: -0.8rem;
+    overflow: auto;
+    max-height: 300px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $white;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #b4b4b4;
+      border-radius: 15px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    table {
+	  width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 0.8rem;
+	  @media (min-width: 768px) {
+        .mobile {
+			display: none;
+		}
+      }
+	  @media (max-width: 767px) {
+        .deskop {
+			display: none;
+		}
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+
+      thead tr {
+        background-color: #f5f7fe;
+        color: $secondary;
+        text-align: left;
+
+        th {
+          padding: 0.9rem 1.6rem;
+          min-height: 4rem;
+          border-bottom: 1px solid $secondary;
+        }
+      }
+
+      tbody:before {
+        content: '-';
+        display: block;
+        line-height: 0.1rem;
+        color: transparent;
+      }
+
+      tbody tr {
+        background-color: #e5ecf9;
+        color: $deep-dark;
+
+        td {
+          min-height: 4rem;
+          padding: 0.9rem 1.6rem;
+		  //white-space: nowrap;
+        }
+
+        td:first-child {
+          border-left: 4px solid $secondary;
+        }
+      }
+    }
+  }
+}

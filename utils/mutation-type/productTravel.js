@@ -1,0 +1,9 @@
+export const SET_PRODUCT_TRAVEL_LIST = "setProductTravelList";
+export const SET_PRODUCT_TRAVEL_DETAIL = "setProductTravelDetail";
+export const SET_PRODUCT_TRAVEL_COMMENT = "setProductTravelComment";
+export const SET_PRODUCT_TRAVEL_RELATED = "setProductTravelRelated"
+export const SET_PRODUCT_TRAVEL_COMMENT_REPLY_UPDATE = "setProductTravelCommentReplyUpdate";
+export const SET_PRODUCT_TRAVEL_POST_COMMENT = "setProductTravelPostComment";
+export const SET_PRODUCT_TRAVEL_COMMENT_DETAIL = "setProductTravelCommentDetail"
+export const SET_PRODUCT_TRAVEL_COMMENT_UPDATE = "setProductTravelCommentUpdate";
+export const SET_PRODUCT_TRAVEL_IS_FETCHING_LIST = "setProductTravelIsFetchingList";

@@ -1,0 +1,36 @@
+.#{$prefix}tag {
+  display: inline-block;
+  padding: $tag-padding;
+  font-size: $tag-font-size;
+  line-height: $tag-line-height;
+  white-space: nowrap;
+  background: $tag-bg;
+  border: $tag-border;
+  border-radius: $tag-border-radius;
+  cursor: pointer;
+
+  &__close {
+      display: inline-block;
+      font-size: inherit;
+      padding: 0 3px;
+      margin-right: -3px;
+  }
+}
+
+.#{$prefix}tag--xs {
+  padding: $tag-padding-xs;
+  font-size: $tag-font-size-xs;
+  border-radius: $tag-border-radius-xs;
+}
+
+.#{$prefix}tag--sm {
+  padding: $tag-padding-sm;
+  font-size: $tag-font-size-sm;
+  border-radius: $tag-border-radius-sm;
+}
+
+.#{$prefix}tag--lg {
+  padding: $tag-padding-lg;
+  font-size: $tag-font-size-lg;
+  border-radius: $tag-border-radius-lg;
+}

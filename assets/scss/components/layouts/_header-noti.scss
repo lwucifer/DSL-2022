@@ -1,0 +1,77 @@
+.header-noti {
+    display: inline-flex;
+    position: relative;
+}
+
+.header-noti__box {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 300px;
+    padding: 1.2rem;
+    border-radius: $border-radius;
+    background-color: $white;
+    max-height: 56rem;
+    overflow-y: auto;
+    @include scrollbars(8px, #B4B4B4, transparent, $border-radius);
+    z-index: map-get($z-index, 'header');
+    text-align: left;
+}
+
+
+.icon-noti {
+    position: relative;
+
+    svg {
+        font-size: 1.6rem;
+    }
+
+    .number-noti {
+        position: absolute;
+        top: 0;
+        right: -7px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $danger;
+        color: $white;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.noti-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.3rem;
+
+    li {
+        border-bottom: 1px solid #ECECEC;
+        padding: 1rem 0;
+    }
+
+    li:last-child {
+        border-bottom: none;
+    }
+}
+
+.noti-list__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $body-color;
+
+    .noti-unread {
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #FF0F59;
+        border-radius: 50%;
+    }
+}
+
+.noti-list__content, .noti-list__time {
+    margin-bottom: 0;
+    color: $body-color;
+}

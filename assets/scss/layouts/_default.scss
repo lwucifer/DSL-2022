@@ -1,0 +1,75 @@
+.layout-default {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .page-content {
+    flex-grow: 1;
+    background-color: #F5F7FE;
+    overflow-x: hidden;
+    
+    @include media('>=md') {
+      overflow-x: auto;
+    }
+  }
+
+  .page-content-inner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  // .zalo-chat-widget {
+  //   bottom: 74px !important;
+  //   right: 18px !important;
+    
+  //   &.zalo-chat-hidden {
+  //     display: none !important;
+  //   }
+  // }
+
+  .chat-bot {
+
+
+    &__expend {
+      position: fixed;
+      bottom: 20px;
+      right: 23px;
+
+      z-index: 2147483648;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: $blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+  
+      border: 2px solid $white;
+  
+      img {
+        width: 75%;
+      }
+      // &.active {
+      //   bottom: 15rem;
+      // }
+    }
+    &__zalo {
+      position: fixed;
+      bottom: 85px;
+      right: 23px;
+      z-index: 214748364899;
+      display: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.02);
+      border: 2px solid $white;
+      
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.notification-item {
+    border-bottom: 1px solid #ECECEC;
+    padding: 1.6rem 2.4rem;
+
+    &:hover {
+        background-color: $gray-400;
+    }
+}
+
+.notification-item:last-child {
+    margin-bottom: 0;
+}
+
+.notification-item__title {
+    color: $body-color;
+}
+
+.noti-unread {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #FF0F59;
+    border-radius: 50%;
+}

@@ -1,0 +1,40 @@
+.travel-guide {
+    position: relative;
+    margin-bottom: 3rem;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.travel-guide__icon {
+    position: absolute;
+}
+
+.icon-contact {
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon-vehicle {
+    top: 50%;
+    right: 17%;
+    transform: translateY(-50%);
+}
+
+.icon-social {
+    bottom: 15%;
+    right: 26%;
+}
+
+.icon-travel {
+    bottom: 15%;
+    left: 26%;
+}
+
+.icon-ask {
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}

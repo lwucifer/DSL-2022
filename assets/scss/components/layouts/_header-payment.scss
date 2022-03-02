@@ -1,0 +1,167 @@
+.header {
+  background-color: $secondary;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+}
+
+.header-logo {
+  display: none;
+  flex-shrink: 0;
+  margin-right: 3.2rem;
+  
+  @include media(">=lg") {
+    display: block;
+    svg {
+      width: 183px;
+    }
+  }
+}
+
+
+.header-btn-menu {
+  display: block;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  padding: 5px;
+  margin-left: -5px;
+
+  > span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+}
+
+
+.header-steps {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  @include media(">=xl") {
+    overflow: hidden;
+    justify-content: flex-end;
+  }
+}
+
+.header-step-item {
+  position: relative;
+  color: rgba($white, .7);
+  font-weight: 700;
+  font-size: $font-size-base;
+  white-space: nowrap;
+
+  $this: &;
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 0 .8rem;
+    
+    background-color: #3F69B8;
+    z-index: 1;
+
+    @include media(">=xl") {
+      padding: 0 1.6rem;
+    }
+  }
+
+  &__num {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    min-width: 2.4rem;
+    border-radius: $border-radius;
+    background-color: #194291;
+    color: rgba($white, .7);
+    padding: 0 .5rem;
+    margin-right: 0.8rem;
+    font-size: $font-size-base;
+    vertical-align: bottom;
+  }
+
+  &:after {
+    content: "...";
+    vertical-align: text-bottom;
+  }
+
+  &.completed {
+    color: $primary;
+
+    #{$this}__num {
+      color: $white;
+      background-color: $primary;
+    }
+
+    #{$this}:before {
+      border-top-color: $white;
+    }
+  }
+
+  &.un-completed {
+    cursor: not-allowed;
+  }
+
+  &:first-child {
+    margin-left: 0;
+
+    #{$this}__content {
+      padding-left: 0;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    &:after {
+      content: none;
+    }
+
+    #{$this}__content {
+      padding-right: 0;
+    }
+  }
+
+  @include media(">=xl") {
+    white-space: normal;
+    margin: 0 4.5rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -9rem;
+      width: 9rem;
+      height: 0;
+      margin-top: -1px;
+      border-top: 2px dotted rgba($white, .7);
+    }
+
+    &:after {
+      content: none;
+    }
+
+    &:last-child {
+      &:before {
+        content: none;
+      }
+    }
+  }
+}

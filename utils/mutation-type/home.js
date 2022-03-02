@@ -1,0 +1,9 @@
+export const SET_HOME_SLIDER_BANNER = "setHomeSliderBanner";
+export const SET_HOME_COMBO = "setHomeCombo";
+export const SET_HOME_HOTEL = "setHomeHotel";
+export const SET_HOME_RESTAURANT = "setHomeRestaurant";
+export const SET_HOME_TOUR = "setHomeTour";
+export const SET_HOME_VIDEO = "setHomeVideo";
+export const SET_HOME_PARTNER = "setHomePartner";
+export const SET_HOME_PRODUCT_CATEGORY = "setHomeProductCategory";
+export const SET_HOME_TOURISM_PRODUCT_CATEGORY = "setHomeTourismProductCategory";

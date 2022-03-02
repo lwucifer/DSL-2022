@@ -1,0 +1,23 @@
+.input-search {
+  display: flex;
+  align-items: stretch;
+}
+
+.input-search__btn {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  &.v-btn--lg {
+    flex: 0 0 6rem;
+  }
+}
+
+.input-search__input {
+  background-color: #FBFBFB;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  
+  &:hover, &.v-input--focus {
+    background-color: #FBFBFB;
+  }
+}

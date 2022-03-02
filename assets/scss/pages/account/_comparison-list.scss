@@ -1,0 +1,136 @@
+.comparison-table-wrapper {
+  width: 100%;
+  overflow: hidden auto;
+}
+
+.comparison-table {
+  text-align: left;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  table-layout: fixed;
+  word-break: break-word;
+
+  th {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $deep-dark;
+    padding: 1rem 1.6rem;
+    background-color: #f1f1f1;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $input-border-color;
+    }
+
+    td {
+      padding: 0.8rem 1.6rem;
+    }
+  }
+
+  @include media("<xl") {
+    display: block;
+
+    tbody, thead, tr, td, th {
+      display: block;
+    }
+
+    tbody {
+      tr {
+        padding: 16px;
+        border-bottom: 4px solid #F5F7FE;
+      }
+
+      td {
+        margin-left: 96px + 16px;
+        padding: 0;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        word-wrap: break-word;
+
+        > div {
+          text-align: right;
+        }
+
+        &:before {
+          content: attr(data-title) ":";
+          color: $deep-dark;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+  
+        &:first-child {
+          float: left;
+          margin-left: 0;
+
+          &:before {
+            content: none;
+          }
+          
+          img {
+            width: 96px !important;
+            height: 96px !important;
+            object-fit: cover;
+            border-radius: $border-radius;
+          }
+        }
+      }
+    }
+  }
+
+  @include media(">=xl") {
+    width: 1500px;
+  }
+}
+
+.comparison-table__img {
+  display: block;
+  width: 6.4rem;
+  height: 4.8rem;
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
+.comparison-table__name {
+  font-size: $font-size-base;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.comparison-table-head,
+.comparison-table-body {
+  scroll-behavior: unset;
+}
+
+.comparison-table-head {
+  display: none;
+  overflow: scroll;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    background-color: #f1f1f1;
+  }
+
+  @include media(">=xl") {
+    display: block;
+  }
+}
+
+.comparison-table-body {
+  @include media(">=xl") {
+    max-height: 500px;
+    overflow: scroll;
+  }
+}
+
+.title-box {
+  margin-top: 1.6rem;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+}

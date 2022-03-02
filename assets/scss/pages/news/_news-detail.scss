@@ -1,0 +1,25 @@
+.news-detail__img {
+    img {
+        width: 100%;
+        max-height: 65rem;
+        object-fit: fill;
+    }
+}
+
+.img-summary {
+    font-size: 4.8rem;
+    color: $white;
+    text-align: center;
+    margin: 2.4rem 0;
+    color: $secondary;
+}
+
+.news-detail__content {
+    .ql-align-center {
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+}

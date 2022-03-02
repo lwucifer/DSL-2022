@@ -1,0 +1,43 @@
+.coupon-item {
+    width: 300px !important;
+    height: 170px;
+    padding: 3rem 1.7rem;
+
+    &:hover {
+        .coupon-item__summary {
+            visibility: visible;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden; 
+        }
+    }
+} 
+
+.coupon-item__title {
+    color: $white;
+    position: absolute;
+    bottom: 1.6rem;
+    left: 1.6rem;
+    font-weight: $font-weight-bold;
+    padding-right: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden; 
+}
+
+.coupon-item__summary {
+    color: $white;
+    margin-bottom: 0;
+    visibility: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden; 
+    position: absolute;
+    top: 50%;
+    left: 1.6rem;
+    transform: translateY(-50%);
+    padding-right: 1rem;
+}

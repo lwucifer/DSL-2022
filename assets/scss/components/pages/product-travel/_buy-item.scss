@@ -1,0 +1,46 @@
+.buy-item {
+    background-color: #E5ECF9;
+    padding: 1.6rem;
+    margin-top: 2.4rem;
+
+    &__price {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        .count-item {
+            height: 6rem;
+            border: $input-border-width solid $input-border-color;
+            background-color: $white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.6rem 0 3rem ;
+
+            &:focus, &:active, &:hover {
+                border: $input-border-width solid $input-focus-border-color;
+                box-shadow: $input-focus-box-shadow;
+                outline: none;
+            }
+
+            span {
+                color: $body-color;
+            }
+        }
+    }
+
+    &__total {
+        margin-top: 1.6rem;
+
+        .buy-wholesale {
+            margin-left: 3.2rem;
+            margin-right: -3px;
+            width: 13rem;
+        }
+
+        .buy-now {
+            min-width: 13rem;
+        }
+    }
+}

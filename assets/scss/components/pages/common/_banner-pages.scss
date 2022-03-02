@@ -1,0 +1,28 @@
+.banner-pages {
+    height: 46rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.banner-pages__title {
+    font-size: 6rem;
+    margin-bottom: 0;
+    color: $white;
+    @media (min-width: 768px) {
+        font-size: 8rem;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 9.6rem;
+    }
+}
+
+.banner-pages__text {
+    color: $white;
+    font-size: 2.4rem;
+    margin-bottom: 17rem;
+}

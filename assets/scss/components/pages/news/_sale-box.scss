@@ -1,0 +1,31 @@
+.sale-box {
+    margin: 2.4rem 0;
+}
+
+.sale-box__img {
+    position: relative;
+    img {
+        width: 100%;
+        object-fit: cover;
+
+        @media(min-width: 768px) {
+            height: 24rem;
+        }
+    }
+}
+
+.sale-box__content {
+    background-color: $white;
+    padding: 1.6rem;
+
+    .post-name {
+       margin-bottom: 0.8rem;
+       
+       a {
+        @include set-line((
+            'lineClamp': 1,
+            'lineHeight': $line-height-base
+        ));
+       }
+    }
+}

@@ -1,0 +1,61 @@
+// Block
+.#{$prefix}upload {
+  display: inline-block;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Elements
+.#{$prefix}upload__button {
+  display: inline-flex;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.#{$prefix}upload__control {
+  display: flex;
+  align-items: center;
+  @if ($enable-rounded) {
+    overflow: hidden;
+    border-radius: $border-radius;
+  }
+
+  .#{$prefix}btn {
+    flex-shrink: 0;
+    @if ($enable-rounded) {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+  
+}
+
+.#{$prefix}upload__text {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  letter-spacing: 0.01em;
+  border: 1px solid $border-color;
+  border-right: 0;
+  background-color: #fff;
+  @if ($enable-rounded) {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+}
+
+.#{$prefix}upload__file-name {
+  word-break: break-all;
+}
+
+// Modifiers
+.#{$prefix}upload--disabled {
+  cursor: not-allowed;
+}

@@ -1,0 +1,50 @@
+.easy-travel {
+    background: url("~assets/images/video2x.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 5rem;
+    min-height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        background-size: cover;
+    }
+    
+    @media (min-width: 992px) {
+        height: 67rem;
+        margin-bottom: 10rem;
+    }
+
+    &__inside {
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: 992px) {
+            height: 600px;
+        }
+
+        .link-video {
+            font-size: 3rem;
+            color: $primary;
+            height: 6rem;
+            width: 26.5rem;
+            background: #FFFFFFBD;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            span {
+                margin-left: 1.6rem;
+                height: 6rem;
+                width: 6rem;
+                background-color: #FFFFFF66;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+    }
+}

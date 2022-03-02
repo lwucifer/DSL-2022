@@ -1,0 +1,11 @@
+.menu {
+    background-color: $white;
+    margin-top: 2.4rem;
+    padding: 1.6rem;
+
+    &__title {
+        font-size: $font-size-lg;
+        color: $body-color-dark;
+        margin-bottom: 1.6rem;
+    }
+}

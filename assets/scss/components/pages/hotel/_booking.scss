@@ -1,0 +1,126 @@
+.booking {
+    margin-top: 2.4rem;
+    padding: 1.6rem;
+    background-color: $white;
+
+    &__title {
+        margin-bottom: 1.6rem;
+    }
+
+    &__datepicker {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 1.6rem;
+
+        .app-date-picker + .app-date-picker {
+            margin-left: 1.6rem;
+        }
+    }
+
+    &__room {
+        .room {
+            margin-bottom: 1.6rem;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            @include media('>=md') {
+                flex-direction: row;
+            }
+
+            .room-img {
+                width: 100%;
+                max-width: 100%;
+
+                @include media('>=md') {
+                    width: 30%;
+                }
+
+                .overview-img-room {
+                    height: 100%;
+                    padding: 0 !important;
+
+                    .overview-img {
+                        &__head {
+                            display: none;
+                        }
+
+                        &__grid--6-items {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .room-info {
+                background-color: #E5ECF9;
+                padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+                position: relative;
+                min-height: auto;
+                width: 100%;
+
+                @include media('>=md') {
+                    width: 70%;
+                    padding: 1.6rem 1.6rem 1.6rem 4rem;
+                }
+
+                &__name {
+                    margin-bottom: 1.6rem;
+                    width: 55%;
+
+                    @media(min-width: 768px) {
+                        width: 65%;
+                    }
+
+                    @media(min-width: 992px) {
+                        width: unset;
+                    }
+                }
+
+                &__capacity {
+                    margin-bottom: 1.6rem;
+                    display: grid;
+                    grid-template-columns: minmax(50%, max-content) repeat(auto-fill, 50%);
+                    gap: .5rem;
+
+                    p {
+                        margin-bottom: 0.8rem;
+                        word-break: break-word;
+                    }
+                }
+
+                &__equipment {
+                   @media(min-width: 360px) {
+                    display: grid;
+                    grid-template-columns: minmax(50%, max-content) repeat(auto-fill, 50%);
+                    gap: .5rem;
+                   }
+
+                    .secondary {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 0.8rem;
+
+                        img {
+                            width: 4rem;
+                            height: 4rem;
+                            margin-right: .5rem;
+                        }
+                    }
+                }
+
+                &__btn {
+                    position: absolute;
+                    top: 1.6rem;
+                    right: 1.6rem;
+                }
+            }
+        }
+
+        .room:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

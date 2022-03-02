@@ -1,0 +1,12 @@
+.overview-block {
+  padding: 2rem 1.6rem;
+  background-color: #E5ECF9;
+
+  span {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: inline;
+    }
+  }
+}

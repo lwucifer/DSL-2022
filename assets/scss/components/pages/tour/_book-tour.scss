@@ -1,0 +1,43 @@
+.book-tour {
+  padding: 2.4rem 1.6rem;
+  background-color: #e5ecf9;
+}
+
+.book-tour__label {
+  line-height: (20/17);
+  margin-bottom: 0.8rem;
+  margin-top: 1.6rem;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+}
+
+.book-tour__counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $input-padding-y $input-padding-x;
+  height: 6rem;
+  background: #fff;
+  font-size: $font-size-lg;
+  color: $deep-dark;
+
+  .v-counter {
+    flex-shrink: 0;
+  }
+}
+
+.book-tour__submit {
+  min-width: 13.3rem;
+}
+
+.book-tour__row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.book-tour__col {
+  padding-left: 8px;
+  padding-right: 8px;
+}

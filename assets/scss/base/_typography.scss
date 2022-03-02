@@ -1,0 +1,12 @@
+/* Text size */
+@each $name, $font-size in $text-size {
+    .#{$name} {
+        font-size: $font-size !important;
+    }
+}
+
+/* List Unstyled */
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}

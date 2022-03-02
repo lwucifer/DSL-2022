@@ -1,0 +1,77 @@
+.write-comment {
+  p {
+      color: $deep-dark;
+  }
+
+  &__box {
+    &--text-area {
+      background-color: #F5F7FE;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      padding: .85rem 1.6rem;
+      font-size:  $font-size-base;
+
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      } 
+    }
+
+    /deep/ .v-input {
+      background-color: #F5F7FE;
+      margin-bottom: 1rem;
+    }
+ 
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr 6.2rem 6.2rem;
+      justify-content: center;
+      align-items: end;
+      border: 1px solid #ececec;
+      background-color: #F5F7FE;
+
+      &:focus-within {
+        border-color: #c7eaff !important;
+        box-shadow: 0 0 0 0.2rem rgba(71, 187, 225, 0.25) !important;
+      }
+
+      /deep/ .v-textarea {
+        border: none;
+        box-shadow: none;
+        &--focus {
+            border: none;
+            box-shadow: none;
+        }
+        &__input {
+          padding: 0;
+          resize: none;
+          overflow: hidden;
+        }
+      }
+
+      /deep/ .v-upload {
+        border: none;
+        box-shadow: none;
+        align-self: end;
+        height: 4rem;
+        &--focus {
+            border: none;
+            box-shadow: none;
+        }
+      }
+  
+      .v-btn {
+        align-self: end;
+        height: 4rem;
+        border: none;
+        box-shadow: none;
+        .icon {
+          color: $blue;
+          width: 3rem;
+          height: 2.2rem;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}

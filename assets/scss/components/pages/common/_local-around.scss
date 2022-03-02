@@ -1,0 +1,42 @@
+.local-around {
+    background-color: $white;
+    margin-top: 2.4rem;
+    padding: 1.6rem;
+
+    &__title {
+        font-size: $font-size-lg;
+        color: $body-color-dark;
+        margin-bottom: 1.6rem;
+        font-weight: $font-weight-bold;
+    }
+
+    &__tab {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            padding: 0.4rem 0;
+            border: 1px solid $input-border-color;
+            margin-right: 0.8rem;
+            // height: 3.2rem;
+            width: 13.4rem;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 0.8rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media (min-width: 768px) {
+                margin-bottom: 0;
+            }
+        }
+
+        .active {
+            border: 1px solid $secondary;
+            color: $secondary;
+        }
+    }
+}

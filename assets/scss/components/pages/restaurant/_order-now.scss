@@ -1,0 +1,74 @@
+.order-now {
+    background-color: #E5ECF9;
+    padding: 1.6rem;
+    margin-top: 2.4rem;
+    color: $color-contrast-dark;
+
+    &__title {
+        margin-bottom: 0.8rem;
+    }
+
+    .time-order {
+        .mx-input {
+            height: 6rem;
+        }
+        display: flex;
+        .app-date-picker + .app-date-picker {
+            margin-left: 2.4rem;
+        }
+
+        .app-date-picker {
+            @media (min-width: 992px) {
+                flex: 1;
+            }
+        }
+    }
+
+    .people-come {
+        text-align: center;
+
+        @media(min-width: 768px) {
+            display: flex;
+            text-align: unset;
+        }
+
+        .count-people {
+            border: none; 
+            line-height: 1.5;
+            font-size: 1.4rem;
+            background: $white;
+            padding: 0.85rem 1.6rem;
+            margin-right: 2.4rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1.6rem;
+
+            &:first-child {
+                margin-top: 1.6rem;
+
+                @media(min-width: 768px) {
+                    margin-top: 0;
+                }
+            }
+
+            @media(min-width: 768px) {
+                width: unset;
+                margin-bottom: 0;
+            }
+
+            @media (min-width: 992px) {
+                flex: 1;
+            }
+        }
+
+        .btn-order-confirm {
+            width: 100%;
+            @media (min-width: 768px) {
+                width: unset;
+            }
+        }
+    }
+}

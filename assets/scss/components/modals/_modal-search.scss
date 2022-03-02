@@ -1,0 +1,80 @@
+.modal-search {
+    h3 {
+        font-size: 3.2rem;
+    }
+    .v-modal-content {
+        width: calc(100vw - 60px);
+        max-width: 1200px;
+    }
+    .v-modal-body {
+        padding: 3rem;
+    }
+    &_highlight,
+    &_result {
+        h3 {
+            margin-bottom: 1.5rem;
+        }
+    }
+    .form_container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+    
+    &_form {
+        width: 100%;
+        margin-bottom: 3rem;
+        .control {
+            display: flex;
+            width: 100%;
+            .v-btn svg {
+                width: 2rem;
+                path {fill: #fff;}
+            }
+            .search__input {
+                background-color: #FBFBFB !important;
+                .v-input__input {
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    &::placeholder {
+                        font-size: $font-size-base;
+                        color: rgba($deep-dark, 0.4) !important;
+                    }
+                }
+            }
+        }
+    }
+    .no-result {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 0; 
+        .image {
+            margin-right: 1.5rem;
+        }
+        .text {
+            font-size: 3.8rem;
+        }
+    }
+
+    .recommended-tab {
+        margin-bottom: 2rem;
+
+        span {
+            display: inline-block;
+            font-size: $font-size-lg;
+            margin-right: 1.5rem;
+            padding-bottom: 1rem;
+            color: $gray-700;
+            cursor: pointer;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .active {
+            color: $primary;
+            border-bottom: 2px solid $primary;
+        }
+    }
+}

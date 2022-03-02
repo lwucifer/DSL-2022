@@ -1,0 +1,27 @@
+@mixin spinner-size($size) {
+  height: $size;
+  width: $size;
+
+  .#{$prefix}spinner__spin {
+    height: $size;
+    width: $size;
+    clip: rect(0, $size, $size, $size/2);
+
+    &:after {
+      height: $size;
+      width: $size;
+      clip: rect(0, $size, $size, $size/2);
+      border-width: if($size/10 < 0.2rem, 0.2rem, $size/10);
+    }
+  }
+}
+
+@mixin spinner-variant($color) {
+  .#{$prefix}spinner__spin:after {
+    border-color: $color;
+  }
+
+  .#{$prefix}spinner__text {
+    color: $color;
+  }
+}

@@ -1,0 +1,93 @@
+.header-account {
+  color: $white;
+  font-weight: bold;
+}
+
+.header-account__activator {
+  position: relative;
+  display: inline-block;
+  
+
+  @include media(">=xl") {
+    padding-left: 2.55rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: calc(50% - #{1.9rem / 2});
+      left: 0;
+      width: 0;
+      height: 1.9rem;
+      border-left: 1px solid #fff;
+    }
+  }
+}
+
+.header-account__name {
+  @include text-overflow;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 500;
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 11rem;
+  display: none;
+
+  @include media(">=xl") {
+    display: inline-block;
+  }
+}
+
+.header-account__avatar {
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.header-account__dropdown-content {
+  padding: 1.2rem 0;
+  border-radius: 4px;
+}
+
+.header-account__menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    a {
+      display: block;
+      padding: 0.4rem 1.2rem;
+      color: $deep-dark;
+      font-weight: 500;
+    }
+
+    a .icon {
+      font-size: 1.6rem;
+      margin-right: .8rem;
+    }
+
+    a:hover {
+      color: $primary;
+    }
+
+    a.header-account__menu-logout {
+      color: $red;
+    }
+  }
+}
+
+.header-account__menu-user {
+  .icon {
+    g {
+      stroke: currentColor;
+    }
+  }
+}
+
+.header-account__menu-saved,
+.header-account__menu-history,
+.header-account__menu-compare {
+  .icon [stroke] {
+    stroke: currentColor;
+  }
+}

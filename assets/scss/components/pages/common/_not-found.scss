@@ -1,0 +1,29 @@
+.not-found {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  font-size: $h3-font-size;
+  color: $deep-dark;
+  font-weight: 600;
+
+  @include media(">=xl") {
+    flex-wrap: nowrap;
+  }
+}
+
+.not-found__icon {
+  margin-right: 1.6rem;
+  flex-shrink: 0;
+}
+
+.not-found--vertical {
+  flex-direction: column;
+
+  .not-found__icon {
+    margin-right: 0;
+    margin-bottom: 0.8rem;
+  }
+}

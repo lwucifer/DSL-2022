@@ -1,0 +1,62 @@
+.#{$prefix}counter {
+  white-space: nowrap;
+}
+
+.#{$prefix}counter__button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: $counter-button-size;
+  height: $counter-button-size;
+  border: $counter-button-border;
+  border-radius: $counter-button-border-radius;
+  cursor: pointer;
+  user-select: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $counter-button-content-size;
+    height: $counter-button-content-size/4;
+    margin-top: -(($counter-button-content-size/4)/2);
+    margin-left: -$counter-button-content-size/2;
+    background-color: $counter-button-color;
+  }
+
+  &--decrease {
+    margin-right: $counter-button-margin;
+  }
+
+  &--increase {
+    margin-left: $counter-button-margin;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: $counter-button-content-size;
+      width: $counter-button-content-size/4;
+      margin-left: -(($counter-button-content-size/4)/2);
+      margin-top: -$counter-button-content-size/2;
+      background-color: $counter-button-color;
+    }
+  }
+}
+
+.#{$prefix}counter__value {
+  width: 3rem;
+  text-align: center;
+  display: inline-block;
+  font-size: $counter-value-font-size;
+  font-weight: $counter-value-font-weight;
+  color: $counter-value-color;
+  margin: $counter-value-margin-x;
+  line-height: $counter-button-size;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+  width: 20px;
+  text-align: center;
+}

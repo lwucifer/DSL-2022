@@ -1,0 +1,52 @@
+.toggle-tab {
+  margin-top: 2.4rem;
+  &__head {
+    background-color: $white;
+    height: 6rem;
+    padding: 0;
+
+    span {
+      color: $body-color;
+      margin-right: 1.6rem;
+      font-size: $font-size-lg;
+      padding: 2rem 1.6rem;
+      display: inline-block;
+      height: 6rem;
+      cursor: pointer;
+    }
+
+    .active {
+      color: $primary;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 1px;
+        background-color: $primary;
+      }
+    }
+
+    span:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    background-color: #E5ECF9;
+    padding: 2.2rem 1.6rem;
+
+    .tab-overview span {
+      margin-right: 1.5rem;
+      font-size: $font-size-sm;
+    }
+
+    .tab-overview span:last-child {
+      margin-right: 0;
+    }
+  }
+}

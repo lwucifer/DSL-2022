@@ -1,0 +1,117 @@
+.footer {
+    font-size: $h5-font-size;
+}
+
+.footer-top-wrapper {
+    .footer-top {
+        height: 12rem;
+        display: flex;
+        align-items: center;
+
+        .item-partner {
+            img {
+                width: 100%;
+                height: 5.9rem;
+                object-fit: contain;
+                display: block;
+            }
+        }
+    }
+}
+
+.footer-center-wrapper {
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 3.2rem 0;
+
+    .footer-center {
+        padding: 0 1rem;
+
+        @media(min-width: 768px) {
+            padding: 0;
+        }
+        
+        .footer-center-contact {
+            a {
+                text-decoration: none;
+                display: inline-block;
+                color: $body-color;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            svg {
+                #description {
+                    fill: $green;
+                }
+            }
+        }
+
+        .footer-center-link {
+            p {
+                margin-bottom: 0.8rem;
+                color: $body-color-dark;
+            }
+
+            a {
+              display: block;
+              text-decoration: none;
+              margin-bottom: 0.8rem;
+              color: $body-color;
+              margin-right: 1.6rem;
+
+              &:hover {
+                color: $primary;
+              }
+
+              > svg path{
+                stroke: $body-color;
+              }
+            }
+        }
+    }
+}
+
+.footer-bottom-wrapper {
+    height: 68px;
+    padding: 2.2rem 0;
+}
+
+// .zalo-chat-widget {
+//     bottom: 74px !important;
+//     right: 18px !important;
+// }
+
+// .chat {
+//     position: fixed;
+//     bottom: 25px;
+//     right: 25px;
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 50%;
+//     background-color: $blue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
+//     z-index: 2147483648;
+// }
+
+// .zalo-icon {
+//     display: none !important;
+//     position: fixed;
+//     bottom: 145px;
+//     right: 25px;
+//     width: 65px;
+//     height: 65px;
+//     border-radius: 50%;
+//     background-color: $blue;
+//     cursor: pointer;
+//     z-index: 2147483648;
+
+//     &.active {
+//         display: block !important;
+//     }
+// }

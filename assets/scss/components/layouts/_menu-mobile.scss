@@ -1,0 +1,280 @@
+%icon-styles {
+  margin-right: 1rem;
+  margin-top: -.1875em;
+  font-size: 20px;
+  color: $body-color;
+}
+
+.menu-mobile {
+  &.show {
+    .menu-mobile__content {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .menu-mobile__backdrop {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.menu-mobile__content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 343px;
+  max-width: calc(100% - 30px);
+  height: 100%;
+  background-color: #fff;
+  z-index: map-get($z-index, 'header') + 2;
+  transition: visibility .3s, opacity .3s, transform .3s;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.menu-mobile__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: map-get($z-index, 'header') + 1;
+  transition: visibility .3s, opacity .3s;
+  transition-timing-function: ease-out;
+  visibility: hidden;
+  opacity: 0;
+  
+
+  @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+    backdrop-filter: blur(20px);
+  }
+  
+  @supports (not (backdrop-filter: blur(20px))) and (not (-webkit-backdrop-filter: blur(20px))) {
+    background-color: $modal-backdrop-bg;
+  }
+}
+
+.menu-mobile__topbar {
+  position: relative;
+  padding: 13px 30px 13px 15px;
+  background-color: #F5F7FE;
+  font-size: 12px;
+
+  > span {
+    display: inline-block;
+
+    .icon {
+      font-size: 14px;
+    }
+  }
+
+  > span:first-child:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 7px;
+    border-right: 1px solid #E9E9E9;
+    margin: 0 13px;
+  }
+}
+
+.menu-mobile__close {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  color: $deep-dark;
+  padding: 5px;
+
+  svg {
+    font-size: 20px;
+
+    path {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.menu-mobile__menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: calc(100% - 62px);
+  padding-bottom: 100px;
+
+  // common
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    position: relative;
+    overflow: hidden;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    color: $deep-dark;
+    background-color: #fff;
+    z-index: 1;
+
+    &:hover,
+    &.active {
+      color: $link-hover-color;
+
+      > .icon {
+        color: inherit;
+      }
+    }
+  }
+
+  // child
+  > li > a {
+    padding: 10px 15px;
+    font-size: 17px;
+
+    > .icon {
+      @extend %icon-styles;
+    }
+
+    ~ .menu-mobile__submenu {
+      padding-left: 15px;
+    }
+  }
+}
+
+.menu-mobile__submenu {
+  > li > a {
+    font-size: 15px;
+    padding: 6px 15px;
+
+    + .menu-mobile__menu-item-arrow {
+      width: 30px;
+      height: 30px;
+      top: 2px;
+      right: 7.5px;
+    }
+
+    ~ .menu-mobile__submenu {
+      padding-left: 30px;
+
+      > li > a {
+        font-size: 13px;
+        padding: 4px 15px;
+      }
+    }
+  }
+}
+
+.menu-mobile__menu-item-arrow {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba($body-color, .1);
+  z-index: 1;
+
+  .icon {
+    transition: color .3s, fill .3s, transform .3s;
+    transform: rotate(90deg);
+
+    path {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.menu-mobile__menu-item--has-submenu {
+  > a {
+    margin-right: 40px !important;
+  }
+
+  &.active {
+    > .menu-mobile__menu-item-arrow {
+      color: $link-hover-color;
+      border-color: rgba($link-hover-color, .1);
+
+      .icon {
+        transform: rotate(-90deg)
+      }
+    }
+  }
+}
+
+.menu-mobile__submenu-item--has-submenu {
+  > a {
+    margin-right: 37.5px !important;
+  }
+
+  &.active {
+    > .menu-mobile__menu-item-arrow {
+      color: $link-hover-color;
+      border-color: rgba($link-hover-color, .1);
+
+      .icon {
+        transform: rotate(-90deg)
+      }
+    }
+  }
+}
+
+.menu-mobile__menu-item--select {
+  > a {
+    > span:first-child > .icon {
+      @extend %icon-styles;
+    }
+
+    &:hover {
+      > span:first-child > .icon {
+        color: inherit;
+      }
+    }
+  }
+
+  > .menu-mobile__submenu {
+    text-align: right;
+  }
+
+  &.active {
+    > a > span:first-child,
+    > a > span:first-child > .icon {
+      color: $link-hover-color;
+    }
+
+    .menu-mobile__select .icon {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.menu-mobile__select {
+  display: flex;
+  align-items: center;
+
+  > .icon {
+    margin-left: 16px;
+    transition: transform .3s;
+    transform: rotate(90deg);
+    font-size: 14px;
+
+    path {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.menu-mobile__select-label {
+  color: $primary;
+}

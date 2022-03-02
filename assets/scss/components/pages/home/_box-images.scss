@@ -1,0 +1,19 @@
+.box-images {
+    display: inline-block;
+    border-radius: $border-radius;
+    position: relative;
+    margin-bottom: 2.4rem;
+}
+
+.box-images__img {
+   width: 100%;
+}
+
+.box-images__text {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 1.6rem;
+    font-size: $font-size-lg;
+    color: $white;
+    font-weight: bold;
+}

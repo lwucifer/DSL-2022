@@ -1,0 +1,109 @@
+$default-color: $deep-dark;
+$primary-color: $primary;
+
+$input-border-color: $input-border-color;
+$input-color: $input-color;
+$input-hover-border-color: $input-focus-border-color;
+
+$disabled-color: inherit;
+$disabled-background-color: $input-disabled-bg;
+
+$border-color: $input-border-color;
+
+$calendar-hover-color: $primary;
+
+$input-border-radius: $border-radius;
+
+@import '~vue2-datepicker/scss/index.scss';
+
+.#{$namespace}-datepicker {
+  width: 100%;
+}
+
+.#{$namespace}-datepicker-main {
+  font-family: $font-family-base;
+}
+
+.#{$namespace}-input {
+  height: 4rem;
+  padding: 0 calc(1.6rem + 20px) 0 1.6rem;
+  font-size: 1.4rem;
+  box-shadow: none;
+  @if ($enable-rounded) {
+    border-radius: $input-border-radius;
+  } @else {
+    border-radius: 0;
+  }
+
+  &::placeholder {
+    color: $body-color;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: $input-btn-focus-box-shadow;
+  }
+}
+
+.#{$namespace}-icon-calendar,
+.#{$namespace}-icon-clear {
+  right: 1.6rem;
+}
+
+.app-date-picker {
+  &.size-xs .#{$namespace}-input {
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  &.size-lg .#{$namespace}-input {
+    height: 6rem;
+    font-size: $font-size-lg;
+  }
+
+  &.square {
+    .#{$namespace}-input {
+      border-radius: 0;
+    }
+  }
+}
+
+.app-date-picker--valid {
+  .mx-input {
+    background-color: $input-valid-bg;
+    border-color: $input-valid-border-color;
+    color: $input-valid-color;
+
+    &:hover,
+    &:focus {
+      border-color: $input-valid-border-color;
+
+      @if $enable-shadows {
+        @include box-shadow($input-box-shadow, $input-valid-focus-box-shadow);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: $input-valid-focus-box-shadow;
+      }
+    }
+  }
+}
+
+.app-date-picker--invalid {
+  .mx-input {
+    background-color: $input-invalid-bg;
+    border-color: $input-invalid-border-color;
+    color: $input-invalid-color;
+
+    &:hover,
+    &:focus {
+      border-color: $input-invalid-border-color;
+      
+      @if $enable-shadows {
+        @include box-shadow($input-box-shadow, $input-invalid-focus-box-shadow);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: $input-invalid-focus-box-shadow;
+      }
+    }
+  }
+}

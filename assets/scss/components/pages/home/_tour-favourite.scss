@@ -1,0 +1,84 @@
+.home-swiper  {
+  position: relative;
+  padding-bottom: 1.6rem;
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /deep/ .swiper-pagination-bullet {
+            width: 1.6rem;
+            height: 0.6rem;
+            display: inline-block;
+            border-radius: 1px;
+            margin-right: 0.2rem;
+            background-color: $body-color-dark;
+            opacity: 0.4;
+        }
+
+        /deep/ .swiper-pagination-bullet-active {
+            background-color: $primary;
+            opacity: 1;
+        }
+    }
+}
+
+.tour-favourite {
+  margin-bottom: 1.6rem;
+    &__img {
+        position: relative;
+
+        .icon-heart {
+            position: absolute;
+            top: 16px;
+            right: 26px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            width: 250px;
+            height: 250px;
+            @media (min-width: 1200px) {
+                width: 384px;
+                height: 384px;
+            }
+        }
+
+        .favour {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            .old-price {
+                background-color: $white !important;
+                margin-right: -3px;
+                text-decoration: line-through;
+
+                &:hover {
+                    color: $danger !important;
+                }
+            }
+        }
+    }
+
+    &__info {
+        padding: 1.6rem;
+        background: $white;
+
+        .name-restaurant {
+            font-size: 1.7rem;
+            color: $color-contrast-dark;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .local-hotel {
+            color: $color-contrast-dark;
+            opacity: 0.7;
+        }
+    }
+}

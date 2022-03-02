@@ -1,0 +1,48 @@
+.account-profile-avatar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .v-avatar {
+    border-radius: 8px;
+  }
+
+  .v-upload .v-btn {
+    border: 1px solid #ECECEC;
+    border-radius: $border-radius;
+    font-weight: 400;
+
+    .icon {
+      color: $primary;
+    }
+  }
+}
+
+.account-form-group {
+  .v-input--readonly {
+    &:hover, &.v-input--focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-left {
+  margin-right: 1.2rem;
+  background-color: #656565;
+  color: #ffffff;
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.btn-right {
+  margin-left: 1.2rem;
+}
+
+.pointer-event {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+

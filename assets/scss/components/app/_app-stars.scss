@@ -1,0 +1,16 @@
+.app-stars {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+    &.sm {
+        .star {
+            margin-right: .4rem;
+        }
+    }
+    
+    &.lg {
+        .star {
+            margin-right: 1rem;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.box-wrapper {
+    margin-top: 3.2rem;
+}
+
+.box-wrapper__title {
+    color: $body-color-dark;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+
+    @media (min-width: 768px) {
+        font-size: 2.4rem;
+    }
+   
+    h4 {
+        font-size: 2rem;
+
+        @media (min-width: 768px) {
+            font-size: 2.4rem;
+        }
+    }
+
+    p:nth-child(2) {
+        font-size: 1.7rem;
+        color: $secondary;
+        text-decoration: none;
+        a {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+
+    .swiper-prev, .swiper-next {
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+}
+
+.box-wrapper__text {
+    margin-bottom: 1.6rem;
+    color: $primary;
+    text-decoration: none;
+    display: inline-block;
+}

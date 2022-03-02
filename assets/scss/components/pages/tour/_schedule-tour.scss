@@ -1,0 +1,61 @@
+.schedule-tour__day {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 2px;
+    height: calc(100% - 15px - 0.6rem);
+    background-color: $secondary;
+    z-index: 8;
+  }
+}
+
+.schedule-tour__day-item {
+  padding-left: 2rem;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: 2px solid $secondary;
+    z-index: 9;
+    background-color: $white;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2.7rem;
+  }
+}
+
+.schedule-tour__day-title {
+  margin-bottom: 0;
+  line-height: $line-height-base;
+
+  &.has-detail {
+    cursor: pointer;
+  }
+}
+
+.schedule-tour__day-schedule {
+  list-style-type: none;
+  margin: 1.6rem 0 0 0;
+  padding: 0;
+
+  li {
+    background-color: #f5f7fe;
+    border-left: 4px solid $secondary;
+    padding: 1.2rem 1.6rem;
+
+    /deep/ > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
